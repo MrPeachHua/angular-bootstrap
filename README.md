@@ -4,4 +4,4 @@
 
 #项目目录介绍
 
-![](https://github.com/AntBrother/html5/blob/master/Images/cutpic/cuttfour.png)
+![](https://github.com/antbrothers/angular-bootstrap/blob/master/src/main/webapp/html5/images/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA.png)
