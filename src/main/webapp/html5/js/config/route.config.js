@@ -744,6 +744,23 @@ function routeFn($stateProvider,$urlRouterProvider){
                 }]
             }
         })
+        //用户协议
+        .state('home.useAgree',{
+            url:'/useAgree',
+            views:{
+                'homeCont':{
+                    templateUrl:'../templates/useAgree.html',
+                    controller:'useAgreeCtrl'
+                }
+            },
+            resolve:{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load([
+                        ''+path.build+'/controllers/useAgreeController.js',
+                    ])
+                }]
+            }
+        })
 
 }
 
