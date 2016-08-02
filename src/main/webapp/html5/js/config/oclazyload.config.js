@@ -4,8 +4,8 @@
  */
 "use strict";
 var pathL={
-    build_css:'../build',     //gulp 编译之后的路径
-  /*  build_css:'..'              //原始路径*/
+   /* build_css:'../build',     //gulp 编译之后的路径*/
+    build_css:'..'              //原始路径
 };
 app.constant("Modules_Config",[
     {
@@ -272,6 +272,15 @@ app.constant("Modules_Config",[
         files:[
             ""+pathL.build_css+"/css/payAgree.css"
 
+        ]
+    },
+    {
+        name:'reservedPark_Res',
+        module:true,
+        files:[
+            ""+pathL.build_css+"/css/reservedPark.css",
+            "../scripts/iscroll.js",
+           "../js/adapt/reservedParkAdapt.js"
         ]
     }
 ]);

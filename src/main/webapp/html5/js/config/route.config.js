@@ -4,8 +4,8 @@
  */
 "use strict";
 var path={
-    build:'../build/javascript',   //gulp 编译之后的路径
-   /* build:'../js'                  //原始路径*/
+   /* build:'../build/javascript',   //gulp 编译之后的路径*/
+    build:'../js'                  //原始路径
 
 };
 app.config(["$stateProvider","$urlRouterProvider",routeFn]);
@@ -758,6 +758,29 @@ function routeFn($stateProvider,$urlRouterProvider){
                     return $ocLazyLoad.load([
                         ''+path.build+'/controllers/useAgreeController.js',
                     ])
+                }]
+            }
+        })
+
+        //预约停车
+        .state('home.reservedPark',{
+            url:'/reservedPark',
+            views:{
+                'homeCont':{
+                    templateUrl:'../templates/reservedPark.html',
+                    controller:'reservedParkCtrl'
+                }
+            },
+            resolve:{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load('reservedPark_Res').then(
+                        function (){
+                            return $ocLazyLoad.load([
+                                ''+path.build+'/controllers/reservedParkController.js',
+                                ''+path.build+'/services/reservedParkService.js'
+                            ])
+                        }
+                    )
                 }]
             }
         })
